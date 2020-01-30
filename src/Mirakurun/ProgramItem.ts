@@ -32,9 +32,8 @@ export default class ProgramItem {
 
         if (!data.id) {
             data.id = ProgramItem.getId(data.networkId, data.serviceId, data.eventId);
+            data.updatedAt = Date.now();
         }
-
-        this.data.updatedAt = Date.now();
     }
 
     get id(): number {
