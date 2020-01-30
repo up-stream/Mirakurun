@@ -56,6 +56,8 @@ export interface Program {
     series?: ProgramSeries;
 
     relatedItems?: ProgramRelatedItem[];
+
+    updatedAt?: number;
 }
 
 export interface ProgramGenre {

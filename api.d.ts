@@ -90,6 +90,8 @@ export interface Program {
     };
 
     relatedItems?: ProgramRelatedItem[];
+
+    updatedAt? : number;
 }
 
 export interface ProgramGenre {

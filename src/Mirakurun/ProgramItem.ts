@@ -33,6 +33,8 @@ export default class ProgramItem {
         if (!data.id) {
             data.id = ProgramItem.getId(data.networkId, data.serviceId, data.eventId);
         }
+
+        this.data.updatedAt = Date.now();
     }
 
     get id(): number {
@@ -49,6 +51,7 @@ export default class ProgramItem {
             _.program.save();
             Event.emit("program", "update", this.data);
         }
+        this.data.updatedAt = Date.now();
     }
 
     getStream(user: common.User): Promise<stream.Readable> {
